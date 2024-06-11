@@ -9,7 +9,7 @@ body {
     align-items: center;
 }
 
-.container {
+.wrapper {
     max-width: 600px;
     margin: auto;
     background: #fff;

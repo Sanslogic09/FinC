@@ -1,9 +1,9 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('userForm');
     const tableBody = document.querySelector('#userTable tbody');
     const clearDataButton = document.getElementById('clearDataButton');
 
-    form.addEventListener('submit', function(event) {
+    form.addEventListener('submit', (event) => {
         event.preventDefault();
         const firstName = document.getElementById('firstName').value;
         const lastName = document.getElementById('lastName').value;
@@ -19,13 +19,13 @@ document.addEventListener('DOMContentLoaded', function() {
             tableBody.appendChild(row);
             saveDataToLocalStorage(firstName, lastName, age);
         } else {
-            alert('Age must be 18 or older to submit.');
+            alert('Age must be at least 18 to submit:)');
         }
 
         form.reset();
     });
 
-    clearDataButton.addEventListener('click', function() {
+    clearDataButton.addEventListener('click', () => {
         tableBody.innerHTML = '';
         localStorage.clear();
         form.reset();
